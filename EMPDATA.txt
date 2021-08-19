@@ -1,0 +1,539 @@
+Server [localhost]:
+Database [postgres]:
+Port [5432]:
+Username [postgres]:
+Password for user postgres:
+psql (13.4)
+WARNING: Console code page (437) differs from Windows code page (1252)
+         8-bit characters might not work correctly. See psql reference
+         page "Notes for Windows users" for details.
+Type "help" for help.
+
+postgres=# \l
+                                                    List of databases
+       Name       |  Owner   | Encoding |          Collate           |           Ctype            |   Access privileges 
+------------------+----------+----------+----------------------------+----------------------------+-----------------------
+ employeedatabase | postgres | UTF8     | English_United States.1252 | English_United States.1252 |
+ postgres         | postgres | UTF8     | English_United States.1252 | English_United States.1252 |
+ template0        | postgres | UTF8     | English_United States.1252 | English_United States.1252 | =c/postgres          +
+                  |          |          |                            |                            | postgres=CTc/postgres
+ template1        | postgres | UTF8     | English_United States.1252 | English_United States.1252 | =c/postgres          +
+                  |          |          |                            |                            | postgres=CTc/postgres
+(4 rows)
+
+
+postgres=# CREATE DATABASE
+postgres=# CREATE DATABASE EmpData;
+CREATE DATABASE
+postgres=#      \l
+                                                    List of databases
+       Name       |  Owner   | Encoding |          Collate           |           Ctype            |   Access privileges 
+------------------+----------+----------+----------------------------+----------------------------+-----------------------
+ empdata          | postgres | UTF8     | English_United States.1252 | English_United States.1252 |
+ employeedatabase | postgres | UTF8     | English_United States.1252 | English_United States.1252 |
+ postgres         | postgres | UTF8     | English_United States.1252 | English_United States.1252 |
+ template0        | postgres | UTF8     | English_United States.1252 | English_United States.1252 | =c/postgres          +
+                  |          |          |                            |                            | postgres=CTc/postgres
+ template1        | postgres | UTF8     | English_United States.1252 | English_United States.1252 | =c/postgres          +
+                  |          |          |                            |                            | postgres=CTc/postgres
+(5 rows)
+
+
+postgres=# \c empdata
+You are now connected to database "empdata" as user "postgres".
+
+empdata=# CREATE TABLE Employee (
+empdata(# id INT,
+empdata(# Empname VARCHAR(50),
+empdata(# Age INT,
+empdata(# DepName VARCHAR(50));
+CREATE TABLE
+
+empdata=# \d
+          List of relations
+ Schema |   Name   | Type  |  Owner
+--------+----------+-------+----------
+ public | employee | table | postgres
+(1 row)
+
+empdata=#
+empdata=# \d employee;
+                     Table "public.employee"
+ Column  |         Type          | Collation | Nullable | Default
+---------+-----------------------+-----------+----------+---------
+ id      | integer               |           |          |
+ empname | character varying(50) |           |          |
+ age     | integer               |           |          |
+ depname | character varying(50) |           |          |
+
+empdata=# insert into employee (id, EmpName, Age, DepName) values (1, 'Elysha', 17, 'Legal');
+INSERT 0 1
+empdata=# insert into employee (id, EmpName, Age, DepName) values (2, 'Lukas', 90, 'Human Resources');
+INSERT 0 1
+empdata=# insert into employee (id, EmpName, Age, DepName) values (3, 'Doralin', 64, 'Business Development');
+INSERT 0 1
+empdata=# insert into employee (id, EmpName, Age, DepName) values (4, 'Florencia', 17, 'Services');
+INSERT 0 1
+empdata=# insert into employee (id, EmpName, Age, DepName) values (5, 'Murry', 54, 'Sales');
+INSERT 0 1
+empdata=# insert into employee (id, EmpName, Age, DepName) values (6, 'Lamar', 33, 'Accounting');
+INSERT 0 1
+empdata=# insert into employee (id, EmpName, Age, DepName) values (7, 'Stavros', 14, 'Engineering');
+INSERT 0 1
+empdata=# insert into employee (id, EmpName, Age, DepName) values (8, 'Obed', 17, 'Services');
+INSERT 0 1
+empdata=# insert into employee (id, EmpName, Age, DepName) values (9, 'Tore', 19, 'Engineering');
+INSERT 0 1
+empdata=# insert into employee (id, EmpName, Age, DepName) values (10, 'Ashleigh', 96, 'Training');
+INSERT 0 1
+empdata=# insert into employee (id, EmpName, Age, DepName) values (11, 'Ely', 37, 'Training');
+INSERT 0 1
+empdata=# insert into employee (id, EmpName, Age, DepName) values (12, 'Anett', 21, 'Support');
+INSERT 0 1
+empdata=# insert into employee (id, EmpName, Age, DepName) values (13, 'Koral', 75, 'Services');
+INSERT 0 1
+empdata=# insert into employee (id, EmpName, Age, DepName) values (14, 'Johannah', 53, 'Marketing');
+INSERT 0 1
+empdata=# insert into employee (id, EmpName, Age, DepName) values (15, 'Martynne', 19, 'Engineering');
+INSERT 0 1
+empdata=# insert into employee (id, EmpName, Age, DepName) values (16, 'Merwyn', 34, 'Sales');
+INSERT 0 1
+empdata=# insert into employee (id, EmpName, Age, DepName) values (17, 'Stephen', 24, 'Accounting');
+INSERT 0 1
+empdata=# insert into employee (id, EmpName, Age, DepName) values (18, 'Bartlet', 59, 'Product Management');
+INSERT 0 1
+empdata=# insert into employee (id, EmpName, Age, DepName) values (19, 'Maxine', 1, 'Legal');
+INSERT 0 1
+empdata=# insert into employee (id, EmpName, Age, DepName) values (20, 'Cyb', 90, 'Human Resources');
+INSERT 0 1
+empdata=# insert into employee (id, EmpName, Age, DepName) values (21, 'Mame', 37, 'Marketing');
+INSERT 0 1
+empdata=# insert into employee (id, EmpName, Age, DepName) values (22, 'Cathrine', 10, 'Engineering');
+INSERT 0 1
+empdata=# insert into employee (id, EmpName, Age, DepName) values (23, 'Cassi', 63, 'Engineering');
+INSERT 0 1
+empdata=# insert into employee (id, EmpName, Age, DepName) values (24, 'Blondie', 40, 'Engineering');
+INSERT 0 1
+empdata=# insert into employee (id, EmpName, Age, DepName) values (25, 'Brianne', 65, 'Marketing');
+INSERT 0 1
+empdata=# insert into employee (id, EmpName, Age, DepName) values (26, 'Brennen', 48, 'Product Management');
+INSERT 0 1
+empdata=# insert into employee (id, EmpName, Age, DepName) values (27, 'Waylan', 60, 'Services');
+INSERT 0 1
+empdata=# insert into employee (id, EmpName, Age, DepName) values (28, 'Reba', 23, 'Support');
+INSERT 0 1
+empdata=# insert into employee (id, EmpName, Age, DepName) values (29, 'Nahum', 99, 'Marketing');
+INSERT 0 1
+empdata=# insert into employee (id, EmpName, Age, DepName) values (30, 'Georges', 67, 'Accounting');
+INSERT 0 1
+empdata=# insert into employee (id, EmpName, Age, DepName) values (31, 'Tripp', 41, 'Sales');
+INSERT 0 1
+empdata=# insert into employee (id, EmpName, Age, DepName) values (32, 'Chauncey', 60, 'Services');
+INSERT 0 1
+empdata=# insert into employee (id, EmpName, Age, DepName) values (33, 'Grace', 83, 'Legal');
+INSERT 0 1
+empdata=# insert into employee (id, EmpName, Age, DepName) values (34, 'Jayson', 42, 'Product Management');
+INSERT 0 1
+empdata=# insert into employee (id, EmpName, Age, DepName) values (35, 'Shara', 88, 'Human Resources');
+INSERT 0 1
+empdata=# insert into employee (id, EmpName, Age, DepName) values (36, 'Kellsie', 70, 'Legal');
+INSERT 0 1
+empdata=# insert into employee (id, EmpName, Age, DepName) values (37, 'Winfield', 1, 'Marketing');
+INSERT 0 1
+empdata=# insert into employee (id, EmpName, Age, DepName) values (38, 'Horacio', 72, 'Human Resources');
+INSERT 0 1
+empdata=# insert into employee (id, EmpName, Age, DepName) values (39, 'Sheila', 82, 'Accounting');
+INSERT 0 1
+empdata=# insert into employee (id, EmpName, Age, DepName) values (40, 'Thaxter', 3, 'Legal');
+INSERT 0 1
+empdata=# insert into employee (id, EmpName, Age, DepName) values (41, 'Wynnie', 28, 'Research and Development');
+INSERT 0 1
+empdata=# insert into employee (id, EmpName, Age, DepName) values (42, 'Cobby', 11, 'Sales');
+INSERT 0 1
+empdata=# insert into employee (id, EmpName, Age, DepName) values (43, 'Dev', 40, 'Services');
+INSERT 0 1
+empdata=# insert into employee (id, EmpName, Age, DepName) values (44, 'Zeb', 44, 'Marketing');
+INSERT 0 1
+empdata=# insert into employee (id, EmpName, Age, DepName) values (45, 'Sawyer', 77, 'Research and Development');
+INSERT 0 1
+empdata=# insert into employee (id, EmpName, Age, DepName) values (46, 'Myrta', 17, 'Services');
+INSERT 0 1
+empdata=# insert into employee (id, EmpName, Age, DepName) values (47, 'Anastasia', 66, 'Research and Development');
+INSERT 0 1
+empdata=# insert into employee (id, EmpName, Age, DepName) values (48, 'Pearline', 46, 'Research and Development');
+INSERT 0 1
+empdata=# insert into employee (id, EmpName, Age, DepName) values (49, 'Avivah', 25, 'Support');
+INSERT 0 1
+empdata=# insert into employee (id, EmpName, Age, DepName) values (50, 'Killy', 5, 'Marketing');
+INSERT 0 1
+empdata=# insert into employee (id, EmpName, Age, DepName) values (51, 'Adolphe', 68, 'Legal');
+INSERT 0 1
+empdata=# insert into employee (id, EmpName, Age, DepName) values (52, 'Lonnie', 53, 'Research and Development');
+INSERT 0 1
+empdata=# insert into employee (id, EmpName, Age, DepName) values (53, 'Maje', 57, 'Training');
+INSERT 0 1
+empdata=# insert into employee (id, EmpName, Age, DepName) values (54, 'Sandie', 40, 'Human Resources');
+INSERT 0 1
+empdata=# insert into employee (id, EmpName, Age, DepName) values (55, 'Clemmie', 88, 'Engineering');
+INSERT 0 1
+empdata=# insert into employee (id, EmpName, Age, DepName) values (56, 'Trudie', 83, 'Sales');
+INSERT 0 1
+empdata=# insert into employee (id, EmpName, Age, DepName) values (57, 'Gray', 55, 'Product Management');
+INSERT 0 1
+empdata=# insert into employee (id, EmpName, Age, DepName) values (58, 'Frasquito', 86, 'Marketing');
+INSERT 0 1
+empdata=# insert into employee (id, EmpName, Age, DepName) values (59, 'Sayers', 61, 'Support');
+INSERT 0 1
+empdata=# insert into employee (id, EmpName, Age, DepName) values (60, 'Sigismondo', 88, 'Training');
+INSERT 0 1
+empdata=# insert into employee (id, EmpName, Age, DepName) values (61, 'Otto', 29, 'Business Development');
+INSERT 0 1
+empdata=# insert into employee (id, EmpName, Age, DepName) values (62, 'Donal', 60, 'Marketing');
+INSERT 0 1
+empdata=# insert into employee (id, EmpName, Age, DepName) values (63, 'Ashlen', 33, 'Marketing');
+INSERT 0 1
+empdata=# insert into employee (id, EmpName, Age, DepName) values (64, 'Phillip', 77, 'Training');
+INSERT 0 1
+empdata=# insert into employee (id, EmpName, Age, DepName) values (65, 'Ceciley', 48, 'Human Resources');
+INSERT 0 1
+empdata=# insert into employee (id, EmpName, Age, DepName) values (66, 'Vida', 7, 'Support');
+INSERT 0 1
+empdata=# insert into employee (id, EmpName, Age, DepName) values (67, 'Bradford', 82, 'Business Development');
+INSERT 0 1
+empdata=# insert into employee (id, EmpName, Age, DepName) values (68, 'Trenna', 55, 'Engineering');
+INSERT 0 1
+empdata=# insert into employee (id, EmpName, Age, DepName) values (69, 'Tamas', 22, 'Services');
+INSERT 0 1
+empdata=# insert into employee (id, EmpName, Age, DepName) values (70, 'Mindy', 43, 'Accounting');
+INSERT 0 1
+empdata=# insert into employee (id, EmpName, Age, DepName) values (71, 'Sandro', 49, 'Research and Development');
+INSERT 0 1
+empdata=# insert into employee (id, EmpName, Age, DepName) values (72, 'Frederico', 100, 'Research and Development');
+INSERT 0 1
+empdata=# insert into employee (id, EmpName, Age, DepName) values (73, 'Meghan', 89, 'Research and Development');
+INSERT 0 1
+empdata=# insert into employee (id, EmpName, Age, DepName) values (74, 'Margaretta', 87, 'Training');
+INSERT 0 1
+empdata=# insert into employee (id, EmpName, Age, DepName) values (75, 'Noah', 89, 'Research and Development');
+INSERT 0 1
+empdata=# insert into employee (id, EmpName, Age, DepName) values (76, 'Lanie', 31, 'Services');
+INSERT 0 1
+empdata=# insert into employee (id, EmpName, Age, DepName) values (77, 'Vite', 41, 'Training');
+INSERT 0 1
+empdata=# insert into employee (id, EmpName, Age, DepName) values (78, 'Clementia', 13, 'Support');
+INSERT 0 1
+empdata=# insert into employee (id, EmpName, Age, DepName) values (79, 'Dodie', 66, 'Legal');
+INSERT 0 1
+empdata=# insert into employee (id, EmpName, Age, DepName) values (80, 'Aymer', 26, 'Services');
+INSERT 0 1
+empdata=# insert into employee (id, EmpName, Age, DepName) values (81, 'Mella', 62, 'Research and Development');
+INSERT 0 1
+empdata=# insert into employee (id, EmpName, Age, DepName) values (82, 'Isobel', 96, 'Legal');
+INSERT 0 1
+empdata=# insert into employee (id, EmpName, Age, DepName) values (83, 'Wenda', 11, 'Product Management');
+INSERT 0 1
+empdata=# insert into employee (id, EmpName, Age, DepName) values (84, 'Knox', 25, 'Services');
+INSERT 0 1
+empdata=# insert into employee (id, EmpName, Age, DepName) values (85, 'Teresita', 37, 'Sales');
+INSERT 0 1
+empdata=# insert into employee (id, EmpName, Age, DepName) values (86, 'Clovis', 64, 'Research and Development');
+INSERT 0 1
+empdata=# insert into employee (id, EmpName, Age, DepName) values (87, 'Kalli', 27, 'Legal');
+INSERT 0 1
+empdata=# insert into employee (id, EmpName, Age, DepName) values (88, 'Aldous', 68, 'Human Resources');
+INSERT 0 1
+empdata=# insert into employee (id, EmpName, Age, DepName) values (89, 'Ludovico', 86, 'Human Resources');
+INSERT 0 1
+empdata=# insert into employee (id, EmpName, Age, DepName) values (90, 'Lorne', 89, 'Sales');
+INSERT 0 1
+empdata=# insert into employee (id, EmpName, Age, DepName) values (91, 'Eva', 3, 'Legal');
+INSERT 0 1
+empdata=# insert into employee (id, EmpName, Age, DepName) values (92, 'Alena', 12, 'Support');
+INSERT 0 1
+empdata=# insert into employee (id, EmpName, Age, DepName) values (93, 'Stanly', 17, 'Marketing');
+INSERT 0 1
+empdata=# insert into employee (id, EmpName, Age, DepName) values (94, 'Gale', 50, 'Accounting');
+INSERT 0 1
+empdata=# insert into employee (id, EmpName, Age, DepName) values (95, 'Madlin', 41, 'Business Development');
+INSERT 0 1
+empdata=# insert into employee (id, EmpName, Age, DepName) values (96, 'Hillyer', 91, 'Sales');
+INSERT 0 1
+empdata=# insert into employee (id, EmpName, Age, DepName) values (97, 'Donnamarie', 41, 'Support');
+INSERT 0 1
+empdata=# insert into employee (id, EmpName, Age, DepName) values (98, 'Morty', 42, 'Marketing');
+INSERT 0 1
+empdata=# insert into employee (id, EmpName, Age, DepName) values (99, 'Hedda', 33, 'Support');
+INSERT 0 1
+empdata=# insert into employee (id, EmpName, Age, DepName) values (100, 'Carlita', 29, 'Accounting');
+INSERT 0 1
+empdata=# SELECT * FROM employee;
+ id  |  empname   | age |         depname
+-----+------------+-----+--------------------------
+   2 | Lukas      |  90 | Engineering
+   3 | Doralin    |  64 | Business Development
+   4 | Florencia  |  17 | Services
+   5 | Murry      |  54 | Sales
+   6 | Lamar      |  33 | Accounting
+   7 | Stavros    |  14 | Engineering
+   8 | Obed       |  17 | Services
+   9 | Tore       |  19 | Engineering
+  10 | Ashleigh   |  96 | Training
+  11 | Ely        |  37 | Training
+  12 | Anett      |  21 | Support
+  13 | Koral      |  75 | Services
+  14 | Johannah   |  53 | Marketing
+  15 | Martynne   |  19 | Engineering
+  16 | Merwyn     |  34 | Sales
+  17 | Stephen    |  24 | Accounting
+  18 | Bartlet    |  59 | Product Management
+  19 | Maxine     |   1 | Legal
+  20 | Cyb        |  90 | Human Resources
+  21 | Mame       |  37 | Marketing
+  22 | Cathrine   |  10 | Engineering
+  23 | Cassi      |  63 | Engineering
+  24 | Blondie    |  40 | Engineering
+  25 | Brianne    |  65 | Marketing
+  26 | Brennen    |  48 | Product Management
+  27 | Waylan     |  60 | Services
+  28 | Reba       |  23 | Support
+  29 | Nahum      |  99 | Marketing
+  30 | Georges    |  67 | Accounting
+  31 | Tripp      |  41 | Sales
+  32 | Chauncey   |  60 | Services
+  33 | Grace      |  83 | Legal
+  34 | Jayson     |  42 | Product Management
+  35 | Shara      |  88 | Human Resources
+  36 | Kellsie    |  70 | Legal
+  37 | Winfield   |   1 | Marketing
+  38 | Horacio    |  72 | Human Resources
+  39 | Sheila     |  82 | Accounting
+  40 | Thaxter    |   3 | Legal
+  41 | Wynnie     |  28 | Research and Development
+  42 | Cobby      |  11 | Sales
+  43 | Dev        |  40 | Services
+  44 | Zeb        |  44 | Marketing
+  45 | Sawyer     |  77 | Research and Development
+  46 | Myrta      |  17 | Services
+  47 | Anastasia  |  66 | Research and Development
+  48 | Pearline   |  46 | Research and Development
+  49 | Avivah     |  25 | Support
+  50 | Killy      |   5 | Marketing
+  51 | Adolphe    |  68 | Legal
+  52 | Lonnie     |  53 | Research and Development
+  53 | Maje       |  57 | Training
+  54 | Sandie     |  40 | Human Resources
+  55 | Clemmie    |  88 | Engineering
+  56 | Trudie     |  83 | Sales
+  57 | Gray       |  55 | Product Management
+  58 | Frasquito  |  86 | Marketing
+  59 | Sayers     |  61 | Support
+  60 | Sigismondo |  88 | Training
+  61 | Otto       |  29 | Business Development
+  62 | Donal      |  60 | Marketing
+  63 | Ashlen     |  33 | Marketing
+  64 | Phillip    |  77 | Training
+  65 | Ceciley    |  48 | Human Resources
+  66 | Vida       |   7 | Support
+  67 | Bradford   |  82 | Business Development
+  68 | Trenna     |  55 | Engineering
+  69 | Tamas      |  22 | Services
+  70 | Mindy      |  43 | Accounting
+  71 | Sandro     |  49 | Research and Development
+  72 | Frederico  | 100 | Research and Development
+  73 | Meghan     |  89 | Research and Development
+  74 | Margaretta |  87 | Training
+  75 | Noah       |  89 | Research and Development
+  76 | Lanie      |  31 | Services
+  77 | Vite       |  41 | Training
+  78 | Clementia  |  13 | Support
+  79 | Dodie      |  66 | Legal
+  80 | Aymer      |  26 | Services
+  81 | Mella      |  62 | Research and Development
+  82 | Isobel     |  96 | Legal
+  83 | Wenda      |  11 | Product Management
+  84 | Knox       |  25 | Services
+  85 | Teresita   |  37 | Sales
+  86 | Clovis     |  64 | Research and Development
+  87 | Kalli      |  27 | Legal
+  88 | Aldous     |  68 | Human Resources
+  89 | Ludovico   |  86 | Human Resources
+  90 | Lorne      |  89 | Sales
+  91 | Eva        |   3 | Legal
+  92 | Alena      |  12 | Support
+  93 | Stanly     |  17 | Marketing
+  94 | Gale       |  50 | Accounting
+  95 | Madlin     |  41 | Business Development
+  96 | Hillyer    |  91 | Sales
+  97 | Donnamarie |  41 | Support
+  98 | Morty      |  42 | Marketing
+  99 | Hedda      |  33 | Support
+ 100 | Carlita    |  29 | Accounting
+(100 rows)
+
+
+empdata=# UPDATE employee
+empdata-# SET depname = 'Engineering'
+empdata-# WHERE id = '2'
+UPDATE 2
+               
+empdata=# DELETE FROM employee WHERE id='1';
+DELETE 1
+empdata=# SELECT * FROM employee;
+ id  |  empname   | age |         depname
+-----+------------+-----+--------------------------
+   1 | Elysha     |  17 | Legal
+   2 | Lukas      |  90 | Human Resources
+   3 | Doralin    |  64 | Business Development
+   4 | Florencia  |  17 | Services
+   5 | Murry      |  54 | Sales
+   6 | Lamar      |  33 | Accounting
+   7 | Stavros    |  14 | Engineering
+   8 | Obed       |  17 | Services
+   9 | Tore       |  19 | Engineering
+  10 | Ashleigh   |  96 | Training
+  11 | Ely        |  37 | Training
+  12 | Anett      |  21 | Support
+  13 | Koral      |  75 | Services
+  14 | Johannah   |  53 | Marketing
+  15 | Martynne   |  19 | Engineering
+  16 | Merwyn     |  34 | Sales
+  17 | Stephen    |  24 | Accounting
+  18 | Bartlet    |  59 | Product Management
+  19 | Maxine     |   1 | Legal
+  20 | Cyb        |  90 | Human Resources
+  21 | Mame       |  37 | Marketing
+  22 | Cathrine   |  10 | Engineering
+  23 | Cassi      |  63 | Engineering
+  24 | Blondie    |  40 | Engineering
+  25 | Brianne    |  65 | Marketing
+  26 | Brennen    |  48 | Product Management
+  27 | Waylan     |  60 | Services
+  28 | Reba       |  23 | Support
+  29 | Nahum      |  99 | Marketing
+  30 | Georges    |  67 | Accounting
+  31 | Tripp      |  41 | Sales
+  32 | Chauncey   |  60 | Services
+  33 | Grace      |  83 | Legal
+  34 | Jayson     |  42 | Product Management
+  35 | Shara      |  88 | Human Resources
+  36 | Kellsie    |  70 | Legal
+  37 | Winfield   |   1 | Marketing
+  38 | Horacio    |  72 | Human Resources
+  39 | Sheila     |  82 | Accounting
+  40 | Thaxter    |   3 | Legal
+  41 | Wynnie     |  28 | Research and Development
+  42 | Cobby      |  11 | Sales
+  43 | Dev        |  40 | Services
+  44 | Zeb        |  44 | Marketing
+  45 | Sawyer     |  77 | Research and Development
+  46 | Myrta      |  17 | Services
+  47 | Anastasia  |  66 | Research and Development
+  48 | Pearline   |  46 | Research and Development
+  49 | Avivah     |  25 | Support
+  50 | Killy      |   5 | Marketing
+  51 | Adolphe    |  68 | Legal
+  52 | Lonnie     |  53 | Research and Development
+  53 | Maje       |  57 | Training
+  54 | Sandie     |  40 | Human Resources
+  55 | Clemmie    |  88 | Engineering
+  56 | Trudie     |  83 | Sales
+  57 | Gray       |  55 | Product Management
+  58 | Frasquito  |  86 | Marketing
+  59 | Sayers     |  61 | Support
+  60 | Sigismondo |  88 | Training
+  61 | Otto       |  29 | Business Development
+  62 | Donal      |  60 | Marketing
+  63 | Ashlen     |  33 | Marketing
+  64 | Phillip    |  77 | Training
+  65 | Ceciley    |  48 | Human Resources
+  66 | Vida       |   7 | Support
+  67 | Bradford   |  82 | Business Development
+  68 | Trenna     |  55 | Engineering
+  69 | Tamas      |  22 | Services
+  70 | Mindy      |  43 | Accounting
+  71 | Sandro     |  49 | Research and Development
+  72 | Frederico  | 100 | Research and Development
+  73 | Meghan     |  89 | Research and Development
+  74 | Margaretta |  87 | Training
+  75 | Noah       |  89 | Research and Development
+  76 | Lanie      |  31 | Services
+  77 | Vite       |  41 | Training
+  78 | Clementia  |  13 | Support
+  79 | Dodie      |  66 | Legal
+  80 | Aymer      |  26 | Services
+  81 | Mella      |  62 | Research and Development
+  82 | Isobel     |  96 | Legal
+  83 | Wenda      |  11 | Product Management
+  84 | Knox       |  25 | Services
+  85 | Teresita   |  37 | Sales
+  86 | Clovis     |  64 | Research and Development
+  87 | Kalli      |  27 | Legal
+  88 | Aldous     |  68 | Human Resources
+  89 | Ludovico   |  86 | Human Resources
+  90 | Lorne      |  89 | Sales
+  91 | Eva        |   3 | Legal
+  92 | Alena      |  12 | Support
+  93 | Stanly     |  17 | Marketing
+  94 | Gale       |  50 | Accounting
+  95 | Madlin     |  41 | Business Development
+  96 | Hillyer    |  91 | Sales
+  97 | Donnamarie |  41 | Support
+  98 | Morty      |  42 | Marketing
+  99 | Hedda      |  33 | Support
+ 100 | Carlita    |  29 | Accounting
+(100 rows)
+
+
+
+empdata=#
+empdata=#
+empdata=#
+empdata=#
+empdata=#
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
