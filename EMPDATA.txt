@@ -269,7 +269,8 @@ INSERT 0 1
 empdata=# SELECT * FROM employee;
  id  |  empname   | age |         depname
 -----+------------+-----+--------------------------
-   2 | Lukas      |  90 | Engineering
+   1 | Elysha     |  17 | Legal
+   2 | Lukas      |  90 | Human Resources
    3 | Doralin    |  64 | Business Development
    4 | Florencia  |  17 | Services
    5 | Murry      |  54 | Sales
@@ -381,8 +382,7 @@ DELETE 1
 empdata=# SELECT * FROM employee;
  id  |  empname   | age |         depname
 -----+------------+-----+--------------------------
-   1 | Elysha     |  17 | Legal
-   2 | Lukas      |  90 | Human Resources
+   2 | Lukas      |  90 | Engineering
    3 | Doralin    |  64 | Business Development
    4 | Florencia  |  17 | Services
    5 | Murry      |  54 | Sales
